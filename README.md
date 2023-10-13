@@ -7,7 +7,7 @@
 - For proper deployment, please see the *"release"* branch
 - For development, please see the *"dev"* branch
  
-### File structure
+#### File structure
 
 ```txt
 ├── data
@@ -42,7 +42,7 @@
 └── transformer_GPTQ.yaml
 ```
 
-### Native Deployment on Linux:
+#### Native Deployment on Linux
 
 - Install Miniconda:
  
@@ -89,7 +89,7 @@ pip install -r requirements_exp.txt
   - <s>loading your model using AutoGPTQ and GPTQ</s>
   - <s>loading your model using vllm</s>
 
-### Inference Deployment
+#### Inference
 
 - `ipython ./notebook/test.ipynb` and test whether you can deploy it on your device
   - `./notebook/test.ipynb` is based on llama2-7B under GPTQ-4bit-128g quantization.
@@ -100,20 +100,18 @@ pip install -r requirements_exp.txt
 #### Dependency
 
 - This repo is for in-house and offline LLM application
-- Currently this repo relies on 
-  - `langchain` 
-  - `CUDA` 
-  - `Transformers` 
-  - `AutoGPTQ` 
-  - `LangChain` 
-
+- Currently this repo relies on
+  - `langchain`
+  - `CUDA`
+  - `Transformers`
+  - `AutoGPTQ`
+  - `LangChain`
 
 #### Roadmap
 
 - [x] Replace AutoGPTQ with HG-Transformers
 - [x] Increase the upper limit of the context token to 10k
 - [ ] Inplement RAG
-
 
 #### Contact
 
