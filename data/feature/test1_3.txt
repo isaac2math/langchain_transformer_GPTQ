@@ -1,0 +1,35 @@
+court decides there are special circumstances.
+
+...."
+
+70 Section 44 of the 1999 Act provides:
+
+"(1) When sentencing an offender to imprisonment for an offence, a court is required:
+
+(a) firstly, to set the term of the sentence, and
+
+(b) secondly, to set a non-parole period for the sentence (that is, the minimum period for which the offender must be kept in detention in relation to the offence).
+
+(2) The non-parole period must not be less than three-quarters of the term of the sentence, unless the court decides there are special circumstances for it being less, in which case the court must make a record of its reasons for that decision.
+
+...."
+
+71 In a judgment of this Court in R v Carrion [2000] NSWCCA 191; (2000) 49 NSWLR 149 I said:
+
+"15. The Crimes (Sentencing Procedure) Act is in large measure a consolidating Act, but it is not only a consolidating Act. A specific difference is found in the comparison between s44 of the 1999 Act and s5 of the 1989 Act. The previous legislation provided for the setting of a minimum term and an additional term. The new legislation provides, firstly, for the setting of a total term and then, for a non-parole period. This Court has rejected a construction of the Sentencing Act 1989 that in some way it was appropriate to proceed on the basis that the total sentence was a primary consideration. (See R v GDR (1994) 35 NSWLR 376 at 376-377, 378; R v Hampton (1998) 44 NSWLR 729 at 731-732; R v Bloomfield (1998) 44 NSWLR 734 at 740).
+
+16. The 1999 Act makes it clear that the Court must first set the total sentence. Accordingly under this Act, unlike the 1989 Act, a finding of 'special circumstances' would necessarily result in the reduction of what is now called the 'non-parole period'.
+
+17. Perhaps there are other changes in the new sentencing regime which may give rise to issues as to whether or not a previous provision continues to apply. I have in mind in particular s55 of the Interpretation Act 1987 concerning an Act which 'increases the penalty' for an offence. This section is repealed by cl 4.33 of sch 4 of the Crimes Legislation Amendment (Sentencing) Act 1999 and re-enacted as s19 of the Crimes (Sentencing Procedure) Act 1999".
+
+72 In Carrion, I indicated that the approach to the finding of special circumstances, determined in R v Hampton (1998) 44 NSWLR 729 and R v Bloomfield (1998) 44 NSWLR 734 is no longer appropriate. The same is true with respect to the focus upon the issue of whether or not a longer than usual parole period is appropriate - in the old terminology, a longer than usual additional term. The new focus of attention under the 1999 legislation is on a shorter than usual non-parole period. I use the word "usual" to refer to the ratio identified in the respective statutory standards.
+
+73 In these circumstances, I would reject the Crown submission that, by focusing on the need for reconciliation in the family and community affected by these events, the trial judge committed a legal error. The significance of reconciliation of the family was an element relevant to the issue of a shorter than usual non-parole period and it was, in my opinion, open to his Honour to adopt that general approach.
+
+74 It was not submitted to this Court that the issue of reconciliation was entirely irrelevant, although the weight to be given to considerations of that character was said to be very small. Over recent decades the issue of restorative justice has been of considerable and growing significance in discussions about the operations of the criminal justice system. Matters such as community conferencing and circle sentencing have featured in debates about sentencing practice. The role of victims has also been given more weight in matters of sentencing. That has included questions of empowering the victims in a restorative context such as conferencing. Attention has also been given to the significance of re-integrating offenders into their communities, including smaller communities such as extended families.
+
+75 In my opinion, the matters taken into account by the sentencing judge in the comments I have quoted above about reconciliation, were appropriate to be taken into account in a context where one of the purposes to be served by sentencing is to meet the needs of the victim and also of the particular community affected by the crime that has been committed. Accordingly, in my view, his Honour did not commit any legal error in taking these matters into account.
+
+76 That leaves the question of whether or not the weight his Honour gave to these considerations led to a result that the sentence in terms of the non-parole period does not reflect the objective gravity of the offence. For the reasons outlined by Smart AJ, I agree the final result was of that character.
+
+77 Although I have mentioned the appropriateness of taking into account the ruptures to the community caused by the crime and the desirability of re
