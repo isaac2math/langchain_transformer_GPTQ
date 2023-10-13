@@ -1,51 +1,48 @@
-<h3 align="center"> LLM finetuning and deployment using CUDA </h3>
+<h3 align="center"> LLM: Experiment Branch </h3>
 <h4 align="center"> Isaac W. N. Xu </h4>
 
+### Please note that
+
+- This branch is only to experiment the new features and updates of the LLM deployment.
+- For proper deployment, please see the *"release"* branch
+- For development, please see the *"dev"* branch
+ 
 ### File structure
 
 ```txt
 ├── data
 │   ├── feature
 │   │   ├── os-1.txt
-│   │   ├── os-2.txt
-│   │   └── os-3.txt
+│   │   ├── test1_0.txt
+│   │   ├── test1_1.txt
+│   │   ├── test1_2.txt
+│   │   ├── test1_3.txt
+│   │   └── test1.txt
 │   ├── raw
-│   │   └── open-source.pdf
+│   │   └── os-1.pdf
 │   ├── READEME.md
 │   └── transform
-├── langchain_llama2.yaml
+├── db
+│   └── 648a1b18-a507-40c3-8cf6-c417c2675127
+├── docker
+├── Dockerfile
+├── LICENSE
 ├── model
-│   ├── llama-2-13b.ggmlv3.q3_K_L.bin
-│   ├── llama-2-13b.ggmlv3.q4_K_M.bin
-│   ├── llama-2-13b.ggmlv3.q6_K.bin
-│   ├── llama-2-13b-GPTQ
-│   ├── llama-2-70b.ggmlv3.q3_K_L.bin
-│   ├── llama-2-70b.ggmlv3.q4_K_M.bin
-│   ├── llama-2-70b.ggmlv3.q5_K_M.bin
-│   ├── llama-2-7b.ggmlv3.q3_K_L.bin
-│   ├── llama-2-7b.ggmlv3.q4_K_M.bin
-│   ├── llama-2-7b.ggmlv3.q6_K.bin
-│   ├── Llama-2-7B-GPTQ
-│   ├── model_download.sh
 │   └── README.md
 ├── notebook
+│   ├── prompt_engi.ipynb
+│   ├── test.ipynb
 │   └── trial.ipynb
-├── params.yaml
 ├── README.md
-├── requirements.txt
-└── src
-    ├── embed.py
-    ├── inference.py
-    ├── inf_llama2-13B-q3.py
-    ├── inf_llama2-13B-q4.py
-    ├── inf_llama2-13B-q6.py
-    ├── inf_llama2-7B-q3.py
-    ├── inf_llama2-7B-q6.py.py
-    ├── test3.py
-    └── test.py
+├── result
+│   ├── long_sum.txt
+│   └── short_sum.txt
+├── setup.sh
+├── src
+└── transformer_GPTQ.yaml
 ```
 
-### Deployment: assume you are using Unix
+### Native Deployment on Linux:
 
 - Install Miniconda:
  
@@ -58,108 +55,64 @@ bash miniconda.sh
 - Clone the repo:
  
 ```sh
-git clone https://github.com/isaac2math/langchain_llama2.git
+git clone https://github.com/isaac2math/langchain_transformer_GPTQ
 ```
 
 - Set up conda environment
+  
+  - Make sure the pytorch wheel and the cuda of this env share the same version; otherwise cuda error would appear;
+  - Currently 11.7.1 and 11.8.0 are tested;
+  - Currently only NV-GPUs are supported;
 
 ```sh
-cd langchain_llama2
+cd langchain_transformer_GPTQ
 
-conda create -n langchain_llama2 python=3.10 -y
-conda activate langchain_llama2
+conda create -n langchain_transformer_GPTQ python=3.11 -y
 
-# if deploying GPTQ model, make sure the pytorch wheel and the cuda of this env share the same version
-# otherwise cuda error would appear
+conda activate langchain_transformer_GPTQ
 
-sudo apt-get install -y cmake pkg-config
-
-conda env config vars set LLAMA_CUBLAS=1
-
-conda activate langchain_llama2
-
-```
-
-for NV-GPU:
-
-```sh
-conda install cuda -c nvidia -y
-
-conda env config vars set LLAMA_CUBLAS=1
-
-conda activate langchain_llama2
-
-CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python --force-reinstall --no-cache-dir 
+conda install cuda -c nvidia/label/cuda-11.8.0 -y
 
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-pip install -r requirements_GGML.txt
-
+pip install -r requirements_exp.txt
 ```
 
-- Download pretrained-LLM
-
-```sh
-mkdir -p data/feature data/raw data/transform models
-bash model/model_download.sh
-```
-
-### Data Preprocessing
-
-- tba
-
-### Training
-
-- tba
-
-### Fine-tuning
-
-- tba
-
-### Pruning
-
-- tba
-
-### Quantization
-
-- tba
+- Load pretrained-LLM: you can load your model by
+  - downloading directly from HF using `git lfs`;
+    - beware of the FS incompatibility between HFS and Windows thingy;
+  - downloading directly from HF using `HF-hub`;
+    - see it [here](https://huggingface.co/docs/hub/index);
+  - downloading directly from HF using `AutoModelForCausalLM.from_pretrained` from `HF-transformers`;
+    - see it [here](https://huggingface.co/docs/transformers/model_doc/auto);
+  - loading your own model from the drive;
+  - <s>loading your model using AutoGPTQ and GPTQ</s>
+  - <s>loading your model using vllm</s>
 
 ### Inference Deployment
 
-- Create a vectorstore using word embedding from the documents in `data/feature`
-    ```sh
-    python src/embed.py
-    ```
+- `ipython ./notebook/test.ipynb` and test whether you can deploy it on your device
+  - `./notebook/test.ipynb` is based on llama2-7B under GPTQ-4bit-128g quantization.
+  - it should only cost 8G VRAM for model loading and another 1G for running
+- `ipython ./notebook/trial.ipynb` for long and short context summary using GPTQ
+  - the original sum is produced using LLM "wd-0.0.1"
 
-- Make inferences and give instructions based on the vectorstore in `data/vectorstore`
-    ```python
-    python src/inference.py
-    ```
+#### Dependency
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-#### Usage
-
-- This repo is a PoC for in-house and offline LLM application
+- This repo is for in-house and offline LLM application
 - Currently this repo relies on 
-  - `langchain` : 
-  - `llama-cpp` : 
-  - `chroma` : 
-  - `sbert` : 
-  - `gpt4all` :
+  - `langchain` 
+  - `CUDA` 
+  - `Transformers` 
+  - `AutoGPTQ` 
+  - `LangChain` 
 
 
 #### Roadmap
 
-- [ ] Replace Python with Cuda-cpp
-- [ ] Feed your own data inflow for training and finetuning
-- [ ] Pruning and Quantization
-
-
-#### License
-
-Distributed under the GNU General Public License v3.0 License. See `LICENSE.txt` for more information.
+- [x] Replace AutoGPTQ with HG-Transformers
+- [x] Increase the upper limit of the context token to 10k
+- [ ] Inplement RAG
 
 
 #### Contact
