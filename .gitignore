@@ -1,2 +1,8 @@
 .DS_Store
-src/__pycache__
+**/.DS_Store
+.idea/**
+**/.idea/**
+**/*.pyc
+**/__pycache__
+**/.pytest_cache/
+**/.ipynb_checkpoints/
